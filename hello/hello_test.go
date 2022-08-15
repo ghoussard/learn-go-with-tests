@@ -2,14 +2,6 @@ package hello
 
 import "testing"
 
-func assertMessage(t testing.TB, got string, want string) {
-	t.Helper()
-
-	if got != want {
-		t.Errorf("got %q want %q", got, want)
-	}
-}
-
 func TestHello(t *testing.T) {
 	t.Run("saying hello to people", func(t *testing.T) {
 		got := Hello("Greg", "")
@@ -38,4 +30,12 @@ func TestHello(t *testing.T) {
 
 		assertMessage(t, got, want)
 	})
+}
+
+func assertMessage(t testing.TB, got string, want string) {
+	t.Helper()
+
+	if got != want {
+		t.Errorf("got %q want %q", got, want)
+	}
 }
